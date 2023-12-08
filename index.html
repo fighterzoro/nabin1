@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yes or No Question</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button[disabled] {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Do you love me?</h1>
+  <button onclick="handleYes()">Yes</button>
+  <button id="noButton" onclick="handleNo()">No</button>
+
+  <script>
+    let noButtonClicks = 0;
+
+    function handleYes() {
+      alert("Thankyou and I love you too!");
+    }
+
+    function handleNo() {
+      noButtonClicks++;
+      if (noButtonClicks >= 1000) {
+        alert("Okay, I get it! You don't like me.");
+        document.getElementById('noButton').disabled = true;
+      }
+    }
+  </script>
+</body>
+</html>
